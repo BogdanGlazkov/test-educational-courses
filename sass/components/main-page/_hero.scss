@@ -1,0 +1,110 @@
+.hero {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	padding-top: 200px;
+	padding-bottom: 200px;
+	height: 400px;
+	text-align: center;
+	background-color: var(--background-secondary-color);
+	max-width: 1600px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	@media screen and (min-width: 1200px) {
+		height: 600px;
+		padding-top: 200px;
+		padding-bottom: 200px;
+	}
+
+	// mobile screens
+	background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_480.jpg");
+
+	@media (min-device-pixel-ratio: 2),
+		(-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi),
+		(min-resolution: 2dppx) {
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_960.jpg");
+	}
+
+	// tablet screens
+	@media screen and (min-width: 768px) {
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_768.jpg");
+
+		@media (min-device-pixel-ratio: 2),
+			(-webkit-min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_1536.jpg");
+		}
+	}
+
+	// desktop screens
+	@media screen and (min-width: 1200px) {
+		background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_1600.jpg");
+
+		@media (min-device-pixel-ratio: 2),
+			(-webkit-min-device-pixel-ratio: 2),
+			(min-resolution: 192dpi),
+			(min-resolution: 2dppx) {
+			background-image: linear-gradient(rgba(47, 48, 58, 0.4)), url("../images/hero_3200.jpg");
+		}
+	}
+}
+
+.hero__container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hero__title {
+	display: block;
+	max-width: 696px;
+	margin-left: auto;
+	margin-right: auto;
+
+	color: var(--background-color);
+	font-weight: 900;
+	font-size: 26px;
+	line-height: 1.36;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+
+	@media screen and (min-width: 1200px) {
+		font-size: 44px;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		width: 360px;
+	}
+}
+
+.hero__text {
+	margin: 30px auto;
+	color: var(--background-color);
+	font-size: 26px;
+}
+
+.hero__button {
+	display: block;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: var(--accent-color);
+	color: var(--background-color);
+	font-family: inherit;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 1.88;
+	letter-spacing: 0.06em;
+
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	border-color: transparent;
+}

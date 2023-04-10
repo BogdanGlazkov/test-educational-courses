@@ -1,0 +1,25 @@
+.section__list {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (min-width: 768px) {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+}
+
+.section__title {
+	margin: 0 auto 30px;
+	color: var(--title-text-color);
+	font-weight: 700;
+	font-size: 28px;
+	line-height: 1.17;
+	text-align: center;
+
+	@media screen and (min-width: 1200px) {
+		margin-bottom: 50px;
+		font-size: 36px;
+	}
+}
