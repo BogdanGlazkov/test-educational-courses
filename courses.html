@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EduSite-Courses</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+		/>
+		<link rel="stylesheet" href="./css/main.min.css" />
+	</head>
+
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container header__container">
+				<div class="header__logo">
+					<a href="/" class="logo">
+						<span class="logo__web">Edu</span>
+						<span>Site</span>
+					</a>
+				</div>
+				<nav class="header__nav">
+					<ul class="site__nav">
+						<li class="link">
+							<a href="/">Home</a>
+						</li>
+						<li class="link site__nav--current">
+							<a href="/courses">Courses</a>
+						</li>
+						<li class="link">
+							<a href="./">About Us</a>
+						</li>
+						<li class="link">
+							<a href="./">Contact Us</a>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- Mobile menu -->
+				<div class="mmenu">
+					<button
+						class="mmenu__button"
+						type="button"
+						aria-expanded="false"
+						aria-controls="mmenu__container"
+						data-menu-button
+					>
+						<svg class="mmenu__button-icon" width="18" height="18" aria-label="Mobile menu handler">
+							<use class="mmenu__button-close" href="./images/icons.svg#icon-burger-close"></use>
+							<use class="mmenu__button-burger" href="./images/icons.svg#icon-burger-menu"></use>
+						</svg>
+					</button>
+					<div class="mmenu__container" id="mmenu__container" data-menu>
+						<ul class="mmenu__nav">
+							<li class="mmenu__link">
+								<a href="/">Home</a>
+							</li>
+							<li class="mmenu__link mmenu__link--current">
+								<a href="/courses">Courses</a>
+							</li>
+							<li class="mmenu__link">
+								<a href="/">About Us</a>
+							</li>
+							<li class="mmenu__link">
+								<a href="/">Contact Us</a>
+							</li>
+						</ul>
+						<div class="mmenu__container--lower"></div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main -->
+		<main>
+			<section class="courses">
+				<div class="courses__container container">
+					<h1 class="courses__hidden">Courses</h1>
+					<ul class="courses__filter">
+						<li><button type="button">Science</button></li>
+						<li><button type="button">Languages</button></li>
+						<li><button type="button">IT</button></li>
+						<li><button type="button">Beginner</button></li>
+						<li><button type="button">Intermediate</button></li>
+						<li><button type="button">Advanced</button></li>
+					</ul>
+				</div>
+				<div class="courses__list">
+					<ul class="course">
+						<li class="course__item">
+							<h2>JavaScript</h2>
+							<p>Online course for beginners</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="footer__container container">
+				<div class="footer__logo">
+					<a href="./" class="logo__footer">
+						<span class="logo__web">Edu</span>
+						<span>Site</span>
+					</a>
+					<p class="footer__copy">&copy; 2023 bglazkov@i.ua</p>
+				</div>
+
+				<!-- Footer socials -->
+				<div class="fsocials">
+					<h2 class="footer__title">Join us!</h2>
+					<ul class="fsocials__list">
+						<li>
+							<a class="fsocials__item" href="">
+								<svg class="fsocials__icon" width="20" height="20">
+									<use href="./images/icons.svg#icon-instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a class="fsocials__item" href="">
+								<svg class="fsocials__icon" width="20" height="20">
+									<use href="./images/icons.svg#icon-twitter"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a class="fsocials__item" href="">
+								<svg class="fsocials__icon" width="20" height="20">
+									<use href="./images/icons.svg#icon-facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a class="fsocials__item" class="fsocials-item" href="">
+								<svg class="fsocials__icon" width="20" height="20">
+									<use href="./images/icons.svg#icon-linkedin"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<script src="js/mobile-menu.js"></script>
+	</body>
+</html>
