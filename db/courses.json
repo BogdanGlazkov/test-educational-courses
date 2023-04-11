@@ -1,0 +1,72 @@
+[
+	{
+		"name": "JavaScript",
+		"description": "Online course JavaScript for beginners",
+		"category": "IT",
+		"level": "Beginner",
+		"url": "./images/js.png"
+	},
+	{
+		"name": "Node.js",
+		"description": "Online course Node.js for beginners",
+		"category": "IT",
+		"level": "Beginner",
+		"url": "./images/node.png"
+	},
+	{
+		"name": "React",
+		"description": "Online course React.js",
+		"category": "IT",
+		"level": "Intermediate",
+		"url": "./images/react.png"
+	},
+	{
+		"name": "English",
+		"description": "Online English course with speaking club",
+		"category": "Languages",
+		"level": "Intermediate",
+		"url": "./images/english.png"
+	},
+	{
+		"name": "Spanish",
+		"description": "Online Spanish course for beginners",
+		"category": "Languages",
+		"level": "Beginner",
+		"url": "./images/spanish.png"
+	},
+	{
+		"name": "Chinese",
+		"description": "Online Chinese course for beginners",
+		"category": "Languages",
+		"level": "Beginner",
+		"url": "./images/chinese.png"
+	},
+	{
+		"name": "Psycology",
+		"description": "Online Psycology course for advanced",
+		"category": "Science",
+		"level": "Advanced",
+		"url": "./images/psycology.jpg"
+	},
+	{
+		"name": "Biology",
+		"description": "Online Biology course",
+		"category": "Science",
+		"level": "Intermediate",
+		"url": "./images/biology.jpg"
+	},
+	{
+		"name": "Geography",
+		"description": "Online Geography course",
+		"category": "Science",
+		"level": "Intermediate",
+		"url": "./images/geography.jpg"
+	},
+	{
+		"name": "Math",
+		"description": "Online Math course for advanced",
+		"category": "Science",
+		"level": "Advanced",
+		"url": "./images/math.jpg"
+	}
+]
