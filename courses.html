@@ -14,6 +14,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
 		/>
 		<link rel="stylesheet" href="./css/main.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 	</head>
 
 	<body>
@@ -32,7 +33,7 @@
 							<a href="./">Home</a>
 						</li>
 						<li class="link site__nav--current">
-							<a href="./courses">Courses</a>
+							<a href="./courses.html">Courses</a>
 						</li>
 						<li class="link">
 							<a href="./">About Us</a>
@@ -63,7 +64,7 @@
 								<a href="./">Home</a>
 							</li>
 							<li class="mmenu__link mmenu__link--current">
-								<a href="./courses">Courses</a>
+								<a href="./courses.html">Courses</a>
 							</li>
 							<li class="mmenu__link">
 								<a href="./">About Us</a>
@@ -84,24 +85,15 @@
 				<div class="courses__container container">
 					<h1 class="courses__hidden">Courses</h1>
 					<ul class="courses__filter">
-						<li><button type="button">Science</button></li>
-						<li><button type="button">Languages</button></li>
-						<li><button type="button">IT</button></li>
-						<li><button type="button">Beginner</button></li>
-						<li><button type="button">Intermediate</button></li>
-						<li><button type="button">Advanced</button></li>
+						<li><button type="button" id="science-btn">Science</button></li>
+						<li><button type="button" id="languages-btn">Languages</button></li>
+						<li><button type="button" id="it-btn">IT</button></li>
+						<li><button type="button" id="beginner-btn">Beginner</button></li>
+						<li><button type="button" id="intermediate-btn">Intermediate</button></li>
+						<li><button type="button" id="advanced-btn">Advanced</button></li>
+						<li><button type="button" id="all-btn">All</button></li>
 					</ul>
-					<ul class="courses__list">
-						<li class="card">
-							<img class="card__photo" src="./images/js.png" width="200" alt="JavaScript" />
-							<div class="card__text">
-								<h3 class="card__name">JavaScript</h3>
-								<p class="card__descr">Online course for beginners</p>
-								<p class="card__descr">Category: IT</p>
-								<p class="card__descr">Level: Beginner</p>
-							</div>
-						</li>
-					</ul>
+					<ul class="courses__list" id="output"></ul>
 				</div>
 			</section>
 		</main>
@@ -153,6 +145,30 @@
 				</div>
 			</div>
 		</footer>
-		<script src="js/mobile-menu.js"></script>
+		<script type="module" src="./js/mobile-menu.js"></script>
+		<script type="module" src="./js/courses.js"></script>
+		<script id="template" type="text/x-handlebars-template">
+			{{#each this}}
+				<li class="card">
+					<div class="card__photo">
+						<img src="{{url}}" width="200" alt="{{name}}" />
+					</div>
+					<div class="card__text">
+						<h3 class="card__name">
+							{{name}}
+						</h3>
+						<p class="card__descr">
+							{{description}}
+						</p>
+						<p class="card__descr">
+							Category: {{category}}
+						</p>
+						<p class="card__descr">
+							Level: {{level}}
+						</p>
+					</div>
+				</li>
+			{{/each}}
+		</script>
 	</body>
 </html>
