@@ -84,15 +84,18 @@
 			<section class="courses">
 				<div class="courses__container container">
 					<h1 class="courses__hidden">Courses</h1>
-					<ul class="courses__filter">
-						<li><button type="button" id="science-btn">Science</button></li>
-						<li><button type="button" id="languages-btn">Languages</button></li>
-						<li><button type="button" id="it-btn">IT</button></li>
-						<li><button type="button" id="beginner-btn">Beginner</button></li>
-						<li><button type="button" id="intermediate-btn">Intermediate</button></li>
-						<li><button type="button" id="advanced-btn">Advanced</button></li>
-						<li><button type="button" id="all-btn">All</button></li>
+					<ul class="filter">
+						<li><button class="filter__btn" type="button" data-category="science">Science</button></li>
+						<li><button class="filter__btn" type="button" data-category="languages">Languages</button></li>
+						<li><button class="filter__btn" type="button" data-category="it">IT</button></li>
+						<li><button class="filter__btn" type="button" data-level="beginner">Beginner</button></li>
+						<li><button class="filter__btn" type="button" data-level="intermediate">Intermediate</button></li>
+						<li><button class="filter__btn" type="button" data-level="advanced">Advanced</button></li>
+						<li><button class="filter__btn" type="button" id="all-btn">All</button></li>
 					</ul>
+					<form class="filter__search">
+						<input class="filter__input" type="text" name="searchQuery" placeholder="Search..." />
+					</form>
 					<ul class="courses__list" id="output"></ul>
 				</div>
 			</section>
