@@ -11,7 +11,7 @@ const filters = {
 	level: "",
 };
 
-const courses = await fetch("../db/courses.json")
+const courses = await fetch("db/courses.json")
 	.then(res => res.json())
 	.catch(err => console.log(err));
 
