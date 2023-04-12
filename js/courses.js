@@ -1,13 +1,14 @@
 const refs = {
-	output: document.getElementById("output"),
-	template: document.getElementById("template"),
-	scienceBtn: document.getElementById("science-btn"),
-	languagesBtn: document.getElementById("languages-btn"),
-	itBtn: document.getElementById("it-btn"),
-	beginnerBtn: document.getElementById("beginner-btn"),
-	intermediateBtn: document.getElementById("intermediate-btn"),
-	advancedBtn: document.getElementById("advanced-btn"),
-	allBtn: document.getElementById("all-btn"),
+	output: document.querySelector("#output"),
+	template: document.querySelector("#template"),
+	filterBtn: document.querySelector(".filter"),
+	allBtn: document.querySelector("#all-btn"),
+	input: document.querySelector(".filter__input"),
+};
+
+const filters = {
+	category: "",
+	level: "",
 };
 
 const courses = await fetch("../db/courses.json")
@@ -19,36 +20,56 @@ const template = Handlebars.compile(source);
 const html = template(courses);
 refs.output.innerHTML = html;
 
-refs.scienceBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.category === "Science");
+const applyFilters = () => {
+	const filtered = courses.filter(course => {
+		if (filters.category && filters.category !== course.category.toLowerCase()) {
+			return false;
+		}
+		if (filters.level && filters.level !== course.level.toLowerCase()) {
+			return false;
+		}
+		return true;
+	});
 	refs.output.innerHTML = template(filtered);
-});
+};
 
-refs.languagesBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.category === "Languages");
-	refs.output.innerHTML = template(filtered);
-});
+const setCategoryFilter = category => {
+	filters.category = category;
+	applyFilters();
+};
 
-refs.itBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.category === "IT");
-	refs.output.innerHTML = template(filtered);
-});
+const setLevelFilter = level => {
+	filters.level = level;
+	applyFilters();
+};
 
-refs.beginnerBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.level === "Beginner");
-	refs.output.innerHTML = template(filtered);
-});
+const clearFilter = () => {
+	filters.category = "";
+	filters.level = "";
+};
 
-refs.intermediateBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.level === "Intermediate");
-	refs.output.innerHTML = template(filtered);
-});
+refs.filterBtn.addEventListener("click", event => {
+	const filterButton = event.target.closest(".filter__btn");
+	if (!filterButton) return;
 
-refs.advancedBtn.addEventListener("click", () => {
-	const filtered = courses.filter(c => c.level === "Advanced");
-	refs.output.innerHTML = template(filtered);
+	const category = filterButton.dataset.category;
+	const level = filterButton.dataset.level;
+
+	if (category) {
+		setCategoryFilter(category);
+	} else if (level) {
+		setLevelFilter(level);
+	}
 });
 
 refs.allBtn.addEventListener("click", () => {
+	clearFilter();
 	refs.output.innerHTML = template(courses);
+});
+
+refs.input.addEventListener("input", event => {
+	const query = event.target.value;
+	if (!query.trim()) return;
+	const filtered = courses.filter(course => course.name.toLowerCase().includes(query.toLowerCase()));
+	refs.output.innerHTML = template(filtered);
 });
